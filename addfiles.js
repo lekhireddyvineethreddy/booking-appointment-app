@@ -1,4 +1,3 @@
-// Function to handle form submission
 document.getElementById("my-form").addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent the default form submission
 
@@ -6,7 +5,7 @@ document.getElementById("my-form").addEventListener("submit", function (e) {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
 
-  // Create an object to store user details
+  // Create an object to store the user details
   var userDetails = {
     name: name,
     email: email,
@@ -15,10 +14,10 @@ document.getElementById("my-form").addEventListener("submit", function (e) {
   // Retrieve existing user data from local storage (if any)
   var existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-  // Add the new user to the array
+  // Add the new user object to the array
   existingUsers.push(userDetails);
 
-  // Store the updated user data in local storage
+  // Store the updated user data array in local storage
   localStorage.setItem("users", JSON.stringify(existingUsers));
 
   // Clear the form fields
